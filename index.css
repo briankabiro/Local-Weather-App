@@ -1,16 +1,22 @@
 .container{
-	background:aliceblue;
+	background:#333;
 	width:100%;
 	height:98vh;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items:center;
 }
 #weather-card{
-	background-color:#D3D3D3;
-	height:40vh;
-	width:20vw;
-	margin-top: 5vh;
-}
-#weather-card h2{
 	text-align: center;
+}	
+h1{
+	text-align: center;
+	color: white;
+	font-family: Arial;
+}
+p{
+	color: white;
+	font-family: Calibri;
+	font-weight: bold;
+	font-size: 1.2em;
 }
