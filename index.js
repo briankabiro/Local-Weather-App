@@ -12,12 +12,13 @@ add visibility check and weather icon
 */
 window.onload = function(){
 	console.log('Dom is ready');
-	navigator.geolocation.getCurrentPosition(function(position) {
-  		var longitude = position.coords.longitude;
-		var latitude = 	position.coords.latitude;
+	$.getJSON("http://ipinfo.io", function(data){
+		var position = data.loc.split(',');
+		var latitude = position[0];
+		var longitude = position[1];
 		var url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=543d48a9fcbbc9faa580899563312853";
 		getWeatherData(url);
-	});
+	})
 	function getWeatherData(url){
 		$.get(url, function(data){
 			//data.sys.country, data.name - Nairobi, data.main.temp = data.main.temp - 273 degree symbo = &#8451
